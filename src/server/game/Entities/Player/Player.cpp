@@ -5763,7 +5763,7 @@ float Player::GetMeleeCritFromAgility()
 
 void Player::GetDodgeFromAgility(float &diminishing, float &nondiminishing)
 {
-    // Table for base dodge values
+    // Table for base dodge values - This will change the Agy -> Dodge ratio for Rogue, Druid and hunter.
     const float dodge_base[MAX_CLASSES] =
     {
          0.036640f, // Warrior
@@ -5778,7 +5778,7 @@ void Player::GetDodgeFromAgility(float &diminishing, float &nondiminishing)
          0.0f,      // ??
          0.056097f  // Druid
     };
-    // Crit/agility to dodge/agility coefficient multipliers; 3.2.0 increased required agility by 15%
+    // Crit/agility to dodge/agility coefficient multipliers; 3.2.0 increased required agility by 15% - this will change the agy -> crit ratio for rogue, druid and hunter
     const float crit_to_dodge[MAX_CLASSES] =
     {
          0.85f/1.15f,    // Warrior
